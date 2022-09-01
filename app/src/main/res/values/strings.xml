@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">GreenFlag</string>
+    <string name="greenflag_compnay">GreenFlag</string>
+    <string name="no_matter_what_moto">No matter what</string>
+    <string name="create_an_account_btn">Create an account</string>
+    <string name="policy_document_service">Policy document</string>
+    <string name="request_a_rescue_online_service">Request a rescue online</string>
+    <string name="car_health_updates_service">Car health updates</string>
+    <string name="access_to_create_account">GreenFlag customers can create an account to access</string>
+    <string name="create_an_account_header">Create an account</string>
+    <string name="enter_eamil_address">Enter Eamil address.</string>
+    <string name="example_email_com">example@email.com</string>
+    <string name="enter_password">Enter Password.</string>
+    <string name="see_criteria">See criteria below.</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="password_hint">Password</string>
+    <string name="required_elements">Your password should have a minimum of 8 character and contains atleast one number, one uppercase, one lowercase letters. You can use special characters.</string>
+    <string name="next_btn">Next</string>
+    <string name="tick1_image">tick1</string>
+    <string name="tick2_image">tick2</string>
+    <string name="logo_image">logo</string>
+    <string name="tick_image">tick</string>
+    <string name="required">Required</string>
+</resources>
