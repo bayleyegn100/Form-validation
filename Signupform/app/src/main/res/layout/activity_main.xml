@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="40dp"
+    android:background="@color/black">
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create an Account"
+        android:textColor="@color/white"
+        android:textSize="33sp"
+        android:paddingBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/email_text_view"
+        style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email Address"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:layout_marginBottom="0dp"
+        android:paddingBottom="0dp"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@drawable/cross"
+        app:endIconDrawable="@drawable/tick"
+        app:helperText="required"
+        app:helperTextTextColor="@android:color/holo_red_dark"/>
+
+    <EditText
+        android:id="@+id/email_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint=" Email"
+        android:lines="1"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:layout_marginBottom="20dp"
+        android:textColorHint="@color/design_default_color_primary_dark" />
+    <TextView
+        android:id="@+id/password_text_view"
+        style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        app:helperText="required"
+        app:counterMaxLength="16"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@drawable/cross"
+        app:helperTextTextColor="@android:color/holo_red_dark"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:layout_marginBottom="0dp"
+        android:paddingBottom="0dp"/>
+    <EditText
+        android:id="@+id/password_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="See Criteria Below"
+        android:lines="1"
+
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:layout_marginBottom="20dp"
+        android:textColorHint="@color/design_default_color_primary_dark" />
+    <TextView
+        android:id="@+id/confirm_textview"
+        style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" Confirm Password"
+        app:helperText="required"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@drawable/cross"
+        app:helperTextTextColor="@android:color/holo_red_dark"
+        app:counterMaxLength="16"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:layout_marginBottom="0dp"
+        android:paddingBottom="0dp"/>
+    <EditText
+        android:id="@+id/confirm_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint=" Re-enter password"
+        android:lines="1"
+        android:maxLength="16"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@drawable/cross"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:layout_marginBottom="20dp"
+        android:textColorHint="@color/design_default_color_primary_dark" />
+    <TextView
+        android:id="@+id/criteria_textview"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="Criteria"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:paddingBottom="0dp"/>
+
+    <Button
+        android:id="@+id/next_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Next"
+        android:textSize="30dp" />
+
+
+</LinearLayout>
