@@ -4,4 +4,6 @@
     <string name="invalid_password">You entered a wrong password, please try again.</string>
     <string name="tvEmailERROR"> </string>
     <string name="tvPasswordERROR"> </string>
+    <string name="Required">Required</string>
+    <string name="required">required</string>
 </resources>
