@@ -41,14 +41,12 @@ class MainActivity2 : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {//bundle object help us to put a data
         super.onSaveInstanceState(outState)
         outState.putInt("Age", 33)
-//        Log.d(ContentValues.TAG, "onSaveInstanceState: Rotation of screen" + 12)
 
     }
     //To restore data during screen rotation
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         val data = savedInstanceState.getInt("Age")
-//        Log.d(ContentValues.TAG, "onRestoreInstanceState: Restoring rotation ${data}")
 
     }
 
@@ -74,15 +72,11 @@ class MainActivity2 : AppCompatActivity() {
     private fun validateEmail (): Boolean {
         val emailText = binding.emailEditView.text.toString()
         return if (!Patterns.EMAIL_ADDRESS.matcher(emailText).matches()){
- //           binding.emailEditView.background = ContextCompat.getDrawable(baseContext, R.drawable.error_box)
             resources.getString(R.string.invalid_email).apply {
                 binding.emailEditView.error = this
-//                binding.tvEmailError.text = this
             }
             false
         } else {
- //           binding.etEmail.background = ContextCompat.getDrawable(baseContext, R.drawable.accepted_box)
-//            "".apply { binding.tvEmailERROR.text = this }
             true
         }
     }
@@ -91,63 +85,21 @@ class MainActivity2 : AppCompatActivity() {
         val passText = binding.passwordeditview.text.toString()
         val confText = binding.confirmEditText.text.toString()
         return if (!passText.matches("^(?=.{8,})(?=.*[a-z])(?=.*[A-Z]).*\$".toRegex())) {
- //           binding.etPassword.background = ContextCompat.getDrawable(baseContext, R.drawable.error_box)
-//            binding.etConfirm.background = ContextCompat.getDrawable(baseContext, R.drawable.error_box)
             resources.getString(R.string.invalid_password).apply {
                 binding.passwordeditview.error = this
 //                binding.tvPasswordERROR.text = this
             }
             false
         } else if (passText != confText) {
-//            binding.etPassword.background = ContextCompat.getDrawable(baseContext, R.drawable.error_box)
-//            binding.etConfirm.background = ContextCompat.getDrawable(baseContext, R.drawable.error_box)
             resources.getString(R.string.invalid_password).apply {
                 binding.confirmEditText.error = this
-//                binding.tvPasswordERROR.text = this
             }
             false
         } else {
-//            binding.etPassword.background = ContextCompat.getDrawable(baseContext, R.drawable.accepted_box)
-//            binding.etConfirm.background = ContextCompat.getDrawable(baseContext, R.drawable.accepted_box)
             binding.passwordeditview.error = null
             binding.confirmEditText.error = null
-//            "".apply { binding.tvPasswordERROR.text = this }
             true
         }
     }
 }
 
-//Storing data locally
-//val emailText = binding.emailEditView.text.toString().lowercase().trim()
-//val passwordText = binding.passwordeditview.text.toString().trim()
-//val passwordConfirm = binding.confirmEditText.text.toString().trim()
-//
-////Validating email address
-//
-//binding.emailEditView.doOnTextChanged { text, start, before, count ->  }
-//if (!emailText.contains(".com") && !emailText.contains("@")) {
-//    binding.emailTextView.error =
-//        "Invalid email, make sure you included @ and .com with in your email"
-//} else {
-//    binding.emailTextView.error = null
-//}
-////Validating the password
-//
-//binding.passwordeditview.doOnTextChanged { text, start, before, count -> }
-//if (passwordText.length < 8 ||
-//!passwordText.matches(".*[A-Z].*".toRegex()) ||
-//!passwordText.matches(".*[a-z].*".toRegex()) ||
-//!passwordText.matches(".*[0-9].*".toRegex())
-//) {
-//    binding.textInputLayout.error =
-//        "The password you entered is not complete. Refer the criteria below."
-//} else {
-//    binding.textInputLayout.error = null
-//}
-//// Checking the password for the second time
-//binding.confirmEditText.doOnTextChanged { text, start, before, count ->  }
-//if(passwordText != passwordConfirm){
-//    binding.textInputLayout2.error = "Password does not match. Re-Enter again."
-//} else {
-//    binding.textInputLayout2.error = null
-//}
