@@ -5,6 +5,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
+import android.widget.Button
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.widget.doOnTextChanged
@@ -18,7 +19,7 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         inputFocusListener()
-
+        btnEnabler()
     }
     private val sharedPreferences: SharedPreferences by lazy { //object
         baseContext.getSharedPreferences("My_Share_prefs", MODE_PRIVATE)
@@ -72,7 +73,7 @@ class MainActivity2 : AppCompatActivity() {
     private fun validateEmail (): Boolean {
         val emailText = binding.emailEditView.text.toString()
         return if (!Patterns.EMAIL_ADDRESS.matcher(emailText).matches()){
-            resources.getString(R.string.invalid_email).apply {
+            "This field is required and, your email should include @ and .com, try again".apply {
                 binding.emailEditView.error = this
             }
             false
@@ -85,20 +86,25 @@ class MainActivity2 : AppCompatActivity() {
         val passText = binding.passwordeditview.text.toString()
         val confText = binding.confirmEditText.text.toString()
         return if (!passText.matches("^(?=.{8,})(?=.*[a-z])(?=.*[A-Z]).*\$".toRegex())) {
-            resources.getString(R.string.invalid_password).apply {
+            "Try again, see the criteria below".apply {
                 binding.passwordeditview.error = this
-//                binding.tvPasswordERROR.text = this
             }
             false
         } else if (passText != confText) {
-            resources.getString(R.string.invalid_password).apply {
+            "Password does not match, try again".apply {
                 binding.confirmEditText.error = this
             }
             false
         } else {
+            btnEnabler()
             binding.passwordeditview.error = null
             binding.confirmEditText.error = null
             true
+        }
+    }
+    fun btnEnabler (){
+        if(validateEmail() && validatePassword()){
+            binding.button.isEnabled = true
         }
     }
 }
