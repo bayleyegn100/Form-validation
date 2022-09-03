@@ -19,13 +19,10 @@ class MainActivity2 : AppCompatActivity() {
         setContentView(binding.root)
         inputFocusListener()
 
-
-
     }
     private val sharedPreferences: SharedPreferences by lazy { //object
         baseContext.getSharedPreferences("My_Share_prefs", MODE_PRIVATE)
     }
-
     override fun onResume() {
         super.onResume()
         binding.button.setOnClickListener {
@@ -52,7 +49,6 @@ class MainActivity2 : AppCompatActivity() {
         super.onRestoreInstanceState(savedInstanceState)
         val data = savedInstanceState.getInt("Age")
 //        Log.d(ContentValues.TAG, "onRestoreInstanceState: Restoring rotation ${data}")
-
 
     }
 
